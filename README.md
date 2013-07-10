@@ -15,4 +15,9 @@ Solutions to Project Euler Problems <br/>
 9  - Special Pythagorean triplet <br/>
 10 - Summation of primes <br/>
 11 - Largest product in a grid <br/>
-12 - Highly divisible triangular number (*)
+12 - Highly divisible triangular number <br/>
+13 - Large sum <br/>
+14 - Longest Collatz sequence <br/>
+15 - Lattice paths (*)
+16 - Power digit sum
+20 - Factorial digit sum 
