@@ -5,3 +5,19 @@ there are exactly 6 routes to the bottom right corner.
 
 How many such routes are there through a 20x20 grid?
 '''
+def binomial(n,k):
+	total = 1
+	
+	if k > n-k:
+		k = n-k
+		
+	for i in range(1,k+1):
+		total *= (n - (k - i))
+		total /= i
+	return total
+
+sides = 20
+n = sides *2
+k = sides
+if __name__=='__main__':
+	print binomial(n,k)
