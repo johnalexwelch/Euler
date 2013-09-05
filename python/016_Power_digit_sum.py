@@ -3,12 +3,14 @@
 
 What is the sum of the digits of the number 2^1000?
 '''
-
+import time
 def sum_of_digits(x):
+	start = time.time()
 	digitlist = str(2**x)
 	total = 0
 	for i in digitlist:
 		total += int(i)
-	return total
+	elapsed = time.time() - start
+	return "%s found in %s seconds" % (total,elapsed)
 
 print sum_of_digits(1000)

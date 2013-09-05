@@ -3,13 +3,17 @@ Work out the first ten digits of the sum of the following one-hundred 50-digit n
 
 Numbers in file p13.txt
 '''
+import time
 def addition(f):
 	total = 0
 	for i in f:
 		total += int(i)
-	return str(total)[:10]
+	
+	elapsed = time.time() - start
+	return "%s found in %s seconds" % (str(total)[:10],elapsed)
 
-with open('p13.txt','rU') as f:
+start = time.time()
+with open('txt_files/p13.txt','rU') as f:
 	content = f.readlines()
 	
 print addition(content)

@@ -9,7 +9,7 @@ Hence the difference between the sum of the squares of the first ten natural num
 
 Find the difference between the sum of the squares of the first one hundred natural numbers and the square of the sum.
 '''
-
+import time
 def sum_of_square():
 	ss = 0
 	
@@ -27,8 +27,11 @@ def square_of_sum():
 	return ss2
 	
 def diff():
+	start = time.time()
+	
 	diff = square_of_sum() - sum_of_square()
-	return diff
+	
+	return "%s found in %s seconds" % (diff,time.time() - start)
 
 #print sum_of_square()
 #print square_of_sum()

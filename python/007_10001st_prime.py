@@ -4,7 +4,7 @@ By listing the first six prime numbers: 2, 3, 5, 7, 11, and 13, we can see that 
 What is the 10 001st prime number?
 '''
 
-import math
+import math, time
 
 def isprime(n):
     n = abs(int(n))
@@ -24,6 +24,7 @@ def isprime(n):
     return True
 
 def loop_prime(n):
+	start = time.time()
 	counter = 0
 	l_prime = 1
 	while counter < 10001:
@@ -34,5 +35,7 @@ def loop_prime(n):
 			counter +=1
 			l_prime = n
 			n+=1
-	return l_prime	
+			
+	return "%s found in %s seconds" % (l_prime,time.time() - start)
+
 print loop_prime(1)

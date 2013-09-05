@@ -27,8 +27,9 @@ The product of these numbers is 26x63x78x14 = 1788696.
 What is the greatest product of four adjacent numbers in the same direction (up, down, left, right, or diagonally) in the 20x20 grid?
 
 '''
-
-f= open('20x20.txt','rU')
+import time
+start = time.time()
+f= open('txt_files/20x20.txt','rU')
 x = []
 max_prod = 0
 
@@ -68,5 +69,7 @@ for i in range(3,len(x)):
         diag_left = (x[i][j])*(x[i-1][j+1])*(x[i-2][j+2])*(x[i-3][j+3])
         if diag_left > max_prod:
             max_prod = diag_left
- 
-print "Max product = %s" % max_prod
+
+elapsed = time.time() - start
+print "%s found in %s seconds" % (max_prod,elapsed)
+

@@ -3,15 +3,31 @@ Then working out the alphabetical value for each name, multiply this value by it
 For example, when the list is sorted into alphabetical order, COLIN, which is worth 3 + 15 + 12 + 9 + 14 = 53, is the 938th name in the list. So, COLIN would obtain a score of 938 x 53 = 49714.
 What is the total of all the name scores in the file?
 '''
+import time
+start = time.time()
 
-alpha = {'A':1,'B':2,'C':3,'D':4,'E':5,'F':6}
+def name_count(i):
+	alpha = {'A':1,'B':2,'C':3,'D':4,'E':5,'F':6,'G':7,'H':8,'I':9,'J':10,'K':11,'L':12,'M':13,'N':14,'O':15,'P':16,'Q':17,'R':18,'S':19,'T':20,'U':21,'V':22,'W':23,'X':24,'Y':25,'Z':26}
+	name_test = 'COLIN'
+	name_in = i.split(',')
+	total = 0
+	for n in name_in:
+		word_count = 0
+		for s in n[1:-1]:
+			word_count += alpha[s]
+			print alpha[s]
+			total += alpha[s]
+		print n + ' -> ' + str(word_count)
+	#for n in name_test:
+	#	print alpha[n]
+	#	total += alpha[n]
+	elapsed = time.time() - start
+	return "%s found in %s seconds" % (total,elapsed)
 
 f = open('txt_files/names.txt','rU')
-
 line = f.readlines()
 f.close()
 i=line[0]
-name_in = i.split(',')
-names = [', '.join(name_in[n:]) for n in range(len(name_in))]
-print names
-#names = line.split(",")
+
+print name_count(i)
+

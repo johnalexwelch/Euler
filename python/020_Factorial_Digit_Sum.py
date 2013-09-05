@@ -6,12 +6,13 @@ and the sum of the digits in the number 10! is 3 + 6 + 2 + 8 + 8 + 0 + 0 = 27.
 
 Find the sum of the digits in the number 100!
 '''
-import math
+import math,time
 
+start = time.time()
 total = 0
 for i in str(math.factorial(100)): total += int(i)
 	
-print total
+print "%s found in %s seconds" % (total,time.time() - start)
 
 
 

@@ -21,11 +21,12 @@ The 12th term, F12, is the first term to contain three digits.
 What is the first term in the Fibonacci sequence to contain 1000 digits?
 
 '''
-
+import time
 
 def fib(a,b,count = 1):
+	start = time.time()
 	while len(str(a)) < 1000:	
 		a, b, count = b, a+b , count+1
-	return count
+	return "%s found in %s seconds" % (count,time.time() - start)
 	
 print fib(1,1)

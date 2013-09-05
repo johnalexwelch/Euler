@@ -13,7 +13,8 @@ Which starting number, under one million, produces the longest chain?
 
 NOTE: Once the chain starts the terms are allowed to go above one million.
 '''
-	
+import time
+
 def is_odd(n):
 	return (3*n)+1
 
@@ -38,12 +39,14 @@ def collatz(n, c_list):
 			return collatz(is_odd(n), c_list)
 
 def main():
+	start = time.time()
 	total = 0
 	for i in range(13,1000000):
 		count = len(collatz(i,[]))
 		if count > total:
 			total = count
 			n = i
-	return n
+
+	return "%s found in %s seconds" % (n,time.time() - start)
 
 print main()

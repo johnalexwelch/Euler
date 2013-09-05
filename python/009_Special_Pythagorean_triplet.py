@@ -17,17 +17,17 @@ a=2n+1
 b=2n(n+1)
 c=2n(n+1)+1
 '''
+import time
 def triple():
+	start = time.time()
 	for a in range (1,1000):
 		for b in range(1,1000):
 			for c in range(1,1000):
 				if a+b+c ==1000:
 					if (a**2) + (b**2) == (c**2):
-						print str(a)+" " +str(b)+" " +str(c)
-						return a*b*c
-	print triple()
+						return "%s found in %s seconds" % (a*b*c,time.time() -start)
 
-
+print triple()
 
 
 

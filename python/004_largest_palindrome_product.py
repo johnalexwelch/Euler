@@ -3,7 +3,7 @@ A palindromic number reads the same both ways. The largest palindrome made from 
 
 Find the largest palindrome made from the product of two 3-digit numbers.
 '''
-	
+import time
 def palindrome(n):
 	p = str(n)[::-1]
 	
@@ -13,6 +13,7 @@ def palindrome(n):
 		return False
 
 def product():
+	start = time.time()
 	h = 0
 	for i in range(100,999):
 		for j in range(100,999):
@@ -20,7 +21,7 @@ def product():
 			if palindrome(n) == True:
 				if n > h:
 					h = n
-				
-	print h
-#print palindrome(525)
+	
+	return "%s found in %s seconds" % (h,time.time() - start)			
+
 print product()

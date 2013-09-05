@@ -30,13 +30,13 @@ def to_words(n):
 			#Add 7 for the "hundred"
 			total += single[i/100] +  7
 			
-			if (i/10) < 0:
-				total += single[1/10]
+			if ((i/10)%10) < 2:
+				total += single[i%100]
 			else:
-				total += double[(i/10)/10] + single[(i%10)%10]
+				total += double[(i/10)%10] + single[(i%10)%10]
 			
 			# Handle the "and"
-			if (i%10)%10 != 0:
+			if (((i/10)%10 != 0) or ((i%10)%10 != 0)):
 				total += 3
 		
 		else: total += single[1] + 8 #Add 8 for the thousand
@@ -44,5 +44,43 @@ def to_words(n):
 	return "%s found in %s seconds" % (total,elapsed)
 
 #21124
-
 print to_words(1000)
+
+## TESTING AREA ##
+#def test(i):
+#	total = 0
+#	print "Digit Value"
+#	print str((i/100)) + "         ->  " + str(single[i/100])
+#	print str((i/10)%10)  + "         ->  " + str(double[(i/10)%10])
+#	print  str((i%10)%10) + "         ->  " + str(single[(i%10)%10])
+#	
+#	if i < 20:
+#		total += single[i]
+#	elif i < 100:
+#		total += double[i/10] + single[i%10]
+#	elif i < 1000:
+#
+#	#Add 7 for the "hundred"
+#		total += single[i/100] +  7
+#		print  "hundred   ->  7"
+#			
+#		if (i/10) < 0:
+#			total += single[1/10]
+#		else:
+#			if ((i/10)%10) < 2:
+#				#print i%100
+#				total += single[i%100]
+#			else:
+#				total += double[(i/10)%10] + single[(i%10)%10]
+#			
+#			#print double[(i/10/10)]
+#		# Handle the "and"
+#		if (((i/10)%10 != 0) or ((i%10)%10 != 0)):
+#			print  "and       ->  3"
+#			total += 3
+#		
+#	else: total += single[1] + 8 #Add 8 for the thousand
+#	
+#	print "------------------"
+#	return total
+#print test(817)

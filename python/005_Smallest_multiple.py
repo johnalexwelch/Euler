@@ -3,7 +3,7 @@
 
 What is the smallest positive number that is evenly divisible by all of the numbers from 1 to 20?
 '''
-
+import time
 
 def multiple(x):
 	check = True
@@ -16,13 +16,12 @@ def multiple(x):
 	return check
 
 def count_function(n):
-	
+	start = time.time()	
 	check = multiple(n)
 	while check != True:
 		n+=20
 		check = multiple(n)
 
-	print n
-	
+	return "%s found in %s seconds" % (n,time.time() - start)
 
 print count_function(20)
