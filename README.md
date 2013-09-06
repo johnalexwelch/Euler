@@ -18,6 +18,16 @@ Solutions to Project Euler Problems <br/>
 12 - Highly divisible triangular number <br/>
 13 - Large sum <br/>
 14 - Longest Collatz sequence <br/>
-15 - Lattice paths (*) <br/>
+15 - Lattice paths <br/>
 16 - Power digit sum <br/>
+17 - Number letter counts <br/>
 20 - Factorial digit sum <br/>
+22 - Names Scores <br/>
+23 - Non abundant sums <br/>
+24 - Lexicographic Permutations  <br/>
+25 - 1000 digit fibonacci numbers
+29 - Distinct Powers <br/>
+30 - Digit fifth powers <br/>
+31 - Coin sums (*)  <br/>
+37 - Trncatable primes  <br/>
+48 - Self powers  <br/>
